@@ -17,11 +17,11 @@ To use DGSbot, you need the following:
    ```
    git clone https://github.com/sarangcr03/LinuxGSM-discord-bot.git
    ```
-
+   
 2. Install the package:
 
    ```
-   pip install -e .
+   pip install LinuxGSM-discord-bot/DGSbot-1.0.tar.gz
    ```
 
 3. Run the setup script to set your environment variables:
@@ -30,7 +30,7 @@ To use DGSbot, you need the following:
    DGSbot-setup
    ```
 
-   You will be prompted to enter your Discord bot token, server path, server name, and allowed user IDs.
+   ***You will be prompted to enter your Discord bot token, game server path, game server name, and allowed discord user IDs.***
 
 4. Start the bot:
 
@@ -38,7 +38,7 @@ To use DGSbot, you need the following:
    nohup DGSbot &
    ```
 
-   This will start the bot in the background and detach it from the terminal. If you want to stop the bot later, you can use the `kill` or `pkill` command.
+   ***This will start the bot in the background and detach it from the terminal. If you want to stop the bot later, you can use `pkill -f DGSbot`.***
    
 
 ## Usage
