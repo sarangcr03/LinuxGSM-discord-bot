@@ -59,6 +59,8 @@ Once the bot is running, you can use the following commands in Discord:
 - `!update-lgsm`: Update LGSM.
 
 ## Python code for the bot
+
+### __main__.py
 ```ruby
 import discord
 import subprocess
@@ -128,6 +130,23 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+```
+### setup_script.py
+```ruby
+import os
+import dotenv
+
+def setup():
+    dotenv_path = os.path.expanduser('~/.env')
+    with open(dotenv_path, 'w') as f:
+        f.write(f"TOKEN={input('Enter your Discord bot token: ')}\n")
+        f.write(f"SERVER_PATH={input('Enter your server path: ')}\n")
+        f.write(f"SERVER_NAME={input('Enter your server name: ')}\n")
+        f.write(f"ALLOWED_USER_IDS={input('Enter your allowed user IDs: ')}\n")
+
+if __name__ == '__main__':
+    setup()
 
 ```
 ## Contributing
