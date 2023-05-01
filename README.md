@@ -15,7 +15,7 @@ To use DGSbot, you need the following:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/DGSbot.git
+   git clone https://github.com/sarangcr03/LinuxGSM-discord-bot.git
    ```
 
 2. Install the package:
