@@ -1,12 +1,18 @@
 # LinuxGSM discord bot with python
-This is a python script for a discord bot to run alongside your linuxgsm game server.
-# Setup
+This is a python script for a discord bot to run alongside your linuxgsm game server. 
+
+***NOTE: The directions for installing python assumes that you are using debian or ubuntu for your game server.***
+
+## Setup
 
 Log into your discord developer portal and create an application.
 
 Create a new bot and copy the bot token.
 
-Replace YOUR_DISCORD_BOT_TOKEN with your token, YOUR_DISCORD_USER_ID with your discord ID and add more users in nessesary. (NOTE: enable developer mode in the desktop app to see your discord ID)
+Replace YOUR_DISCORD_BOT_TOKEN with your token, YOUR_DISCORD_USER_ID with your discord ID and add more users in nessesary.
+
+***NOTE: You need to enable developer mode in the discord desktop app to see your discord ID***
+
 ```ruby
 import discord
 import subprocess
@@ -74,3 +80,9 @@ Check if python is installed in your server with this command:
 ```
 python3 --version
 ```
+If not installed :
+```
+sudo apt-get update
+sudo apt-get install python3
+```
+
