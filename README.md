@@ -128,9 +128,35 @@ Run the script in an ssh session and close the terminal after successfully runni
 ```
 nohup python3 script.py &
 ```
-***NOTE: Make sure you are in the directory where the script is located and that you don't do anything else in that terminal after running the script***
+***NOTE: Make sure you are in the directory where the script is located and that you don't do anything else in that terminal after running the script.***
 
-If you need to stop the script:
+## Adding bot to discord server
+
+To add the bot to your discord server, use the url generator in the discord developer portal and select the bot option and give it whatever permission you would like.
+
+Paste the url in a new tab and add to server.
+
+***NOTE: you cannot controll this bot through the server you just added it to, adding it to a server is just so you can directly message the bot.***
+
+Click on the bot's profile and select send message.
+
+These are the avaelable commands:
+```
+!check-update
+!force-update
+!validate
+!backup
+!start
+!details
+!stop
+!restart
+!update
+!monitor
+!test-alert
+!update-lgsm
+```
+
+If you want to stop the script:
 ```
 pkill -f script.py
 ```
