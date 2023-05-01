@@ -38,7 +38,8 @@ To use DGSbot, you need the following:
    nohup DGSbot &
    ```
 
-   This will start the bot in the background and detach it from the terminal. If you want to stop the bot later, you can use the `kill` command.
+   This will start the bot in the background and detach it from the terminal. If you want to stop the bot later, you can use the `kill` or `pkill` command.
+   
 
 ## Usage
 
