@@ -9,7 +9,11 @@ Log into your discord developer portal and create an application.
 
 Create a new bot and copy the bot token.
 
-Replace YOUR_DISCORD_BOT_TOKEN with your token, YOUR_DISCORD_USER_ID with your discord ID and add more users in nessesary.
+Replace YOUR_DISCORD_BOT_TOKEN with your token.
+
+Replace YOUR_DISCORD_USER_ID with your discord ID and add more users if nessesary.
+
+Replace /path/to/server with your game server's directory path, which is usually /home/USER where USER represents your servers username.
 
 ***NOTE: You need to enable developer mode in the discord desktop app to see your discord ID***
 
