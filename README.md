@@ -140,7 +140,7 @@ Paste the url in a new tab and add to server.
 
 Click on the bot's profile and select send message.
 
-These are the avaelable commands:
+These are the available commands:
 ```
 !check-update
 !force-update
