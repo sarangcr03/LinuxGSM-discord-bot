@@ -1,5 +1,5 @@
 # LinuxGSM discord bot with python
-![alt text]()
+![alt text](https://github.com/sarangcr03/LinuxGSM-discord-bot/blob/main/linuxgsm_logo.jpeg?raw=true)
 
 This is a python script for a discord bot to run alongside your LinuxGSM game server. 
 
