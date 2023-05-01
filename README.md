@@ -1,6 +1,6 @@
-![alt text](https://github.com/sarangcr03/linuxgsm-discord-bot/blob/main/Valheim_logo.jpg?raw=true) ![alt text]()
-
 # LinuxGSM discord bot with python
+![alt text](https://github.com/sarangcr03/linuxgsm-discord-bot/blob/main/Valheim_logo.jpg?raw=true)
+
 This is a python script for a discord bot to run alongside your linuxgsm game server. 
 
 ***NOTE: The directions for installing python assumes that you are using debian or ubuntu for your game server.***
