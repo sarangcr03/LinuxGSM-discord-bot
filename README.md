@@ -5,6 +5,60 @@ This is a python script for a discord bot to run alongside your LinuxGSM game se
 
 ## Setup
 
+Log into your discord developer portal and create an application.
+
+Create a new bot and copy the bot token.
+
+Replace YOUR_DISCORD_BOT_TOKEN with your token.
+
+Replace YOUR_DISCORD_USER_ID with your discord ID and add more users if nessesary.
+
+***NOTE: You need to enable developer mode in the discord desktop app to see your discord ID.***
+
+Replace /path/to/server with your game server's directory path, which is usually /home/USER where USER represents your servers username.
+
+Replace YOUR_SERVER_NAME with your LGSM game server name. 
+
+Check if python is installed in your server with this command:
+```
+python3 --version
+```
+If not installed on debian or ubuntu:
+```
+sudo apt-get update
+sudo apt-get install python3
+```
+If not installed on centos:
+```
+yum update -y
+yum install -y python3
+```
+Install PIP on debian or ubuntu:
+```
+apt install python3-pip
+```
+Install PIP on centos:
+```
+yum install epel-release 
+yum install python3-pip
+```
+Install subprocess.run:
+```
+pip install subprocess.run
+```
+### Importing the script
+#### Option 1
+
+Download and import the script.py file to your server.
+
+#### Option 2
+
+Make a new file and edit:
+```
+sudo nano script.py
+```
+Copy and paste this script to the new file:
+
 ```ruby
 import discord
 import subprocess
@@ -68,43 +122,17 @@ async def on_message(message):
 client.run(TOKEN)
 
 ```
+## Run the script in the background with nohup
 
-Log into your discord developer portal and create an application.
+Run the script in an ssh session and close the terminal after successfully running
+```
+nohup python3 script.py &
+```
+***NOTE: Make sure you are in the directory where the script is located and that you don't do anything else in that terminal after running the script***
 
-Create a new bot and copy the bot token.
-
-Replace YOUR_DISCORD_BOT_TOKEN with your token.
-
-Replace YOUR_DISCORD_USER_ID with your discord ID and add more users if nessesary.
-
-***NOTE: You need to enable developer mode in the discord desktop app to see your discord ID.***
-
-Replace /path/to/server with your game server's directory path, which is usually /home/USER where USER represents your servers username.
-
-Replace YOUR_SERVER_NAME with your LGSM game server name. 
-
-Check if python is installed in your server with this command:
+If you need to stop the script:
 ```
-python3 --version
-```
-If not installed on debian or ubuntu:
-```
-sudo apt-get update
-sudo apt-get install python3
-```
-If not installed on centos:
-```
-yum update -y
-yum install -y python3
-```
-Install PIP on debian or ubuntu:
-```
-apt install python3-pip
-```
-Install PIP on centos:
-```
-yum install epel-release 
-yum install python-pip
+pkill -f script.py
 ```
 
 
