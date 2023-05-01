@@ -5,18 +5,6 @@ This is a python script for a discord bot to run alongside your LinuxGSM game se
 
 ## Setup
 
-Log into your discord developer portal and create an application.
-
-Create a new bot and copy the bot token.
-
-Replace YOUR_DISCORD_BOT_TOKEN with your token.
-
-Replace YOUR_DISCORD_USER_ID with your discord ID and add more users if nessesary.
-
-Replace /path/to/server with your game server's directory path, which is usually /home/USER where USER represents your servers username.
-
-***NOTE: You need to enable developer mode in the discord desktop app to see your discord ID***
-
 ```ruby
 import discord
 import subprocess
@@ -80,6 +68,21 @@ async def on_message(message):
 client.run(TOKEN)
 
 ```
+
+Log into your discord developer portal and create an application.
+
+Create a new bot and copy the bot token.
+
+Replace YOUR_DISCORD_BOT_TOKEN with your token.
+
+Replace YOUR_DISCORD_USER_ID with your discord ID and add more users if nessesary.
+
+***NOTE: You need to enable developer mode in the discord desktop app to see your discord ID.***
+
+Replace /path/to/server with your game server's directory path, which is usually /home/USER where USER represents your servers username.
+
+Replace YOUR_SERVER_NAME with your LGSM game server name. 
+
 Check if python is installed in your server with this command:
 ```
 python3 --version
@@ -94,4 +97,14 @@ If not installed on centos:
 yum update -y
 yum install -y python3
 ```
+Install PIP on debian or ubuntu:
+```
+apt install python3-pip
+```
+Install PIP on centos:
+```
+yum install epel-release 
+yum install python-pip
+```
+
 
