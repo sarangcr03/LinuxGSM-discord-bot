@@ -64,4 +64,4 @@ If you find a bug or have a suggestion, please open an issue on GitHub. Pull req
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/sarangcr03/LinuxGSM-discord-bot/blob/main/License) file for details.
