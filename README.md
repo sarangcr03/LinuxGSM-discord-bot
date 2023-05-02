@@ -43,7 +43,7 @@ To use DGSbot, you need the following:
 
 ## Usage
 
-Once the bot is running, you can use the following commands in Discord:
+Once the bot is running, you can send the following commands to teh bot in Discord:
 
 - `!check-update`: Check for available updates.
 - `!force-update`: Force an update to the latest version.
