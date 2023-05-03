@@ -21,7 +21,7 @@ To use DGSbot, you need the following:
 2. Install the package:
 
    ```
-   pip install LinuxGSM-discord-bot/DGSbot-1.0.tar.gz
+   pip install LinuxGSM-discord-bot/DGSbot-2.0.tar.gz
    ```
 
 3. Run the setup script to set your environment variables:
@@ -40,115 +40,37 @@ To use DGSbot, you need the following:
 
    ***This will start the bot in the background and detach it from the terminal. If you want to stop the bot later, you can use `pkill -f DGSbot`.***
    
+# Usage
 
-## Usage
+The bot listens for messages starting with the "!" symbol. The available commands are:
 
-Once the bot is running, you can send the following commands to teh bot in Discord:
+| Command | Shortcut | Description |
+|---------|----------|-------------|
+| start | st | Start the server. |
+| restart | r | Restart the server. |
+| monitor | m | Check server status and restart if crashed. |
+| test-alert | ta | Send a test alert. |
+| details | dt | Display server information. |
+| postdetails | pd | Post details to termbin.com (removing passwords). |
+| skeleton | sk | Create a skeleton directory. |
+| update-lgsm | ul | Check and apply any LinuxGSM updates. |
+| update | u | Check and apply any server updates. |
+| check-update | cu | Check if a gameserver update is available. |
+| force-update | fu | Apply server updates bypassing check. |
+| validate | v | Validate server files with SteamCMD. |
+| backup | b | Create backup archives of the server. |
+| console | c | Access server console. |
+| debug | d | Start server directly in your terminal. |
+| mods-install | mi | View and install available mods/addons. |
+| mods-remove | mr | View and remove an installed mod/addon. |
+| mods-update | mu | Update installed mods/addons. |
+| install | i | Install the server. |
+| auto-install | ai | Install the server without prompts. |
+| developer | dev | Enable developer mode. |
+| stop | sp | Stop the server. |
 
-- `!check-update`: Check for available updates.
-- `!force-update`: Force an update to the latest version.
-- `!validate`: Validate the server files.
-- `!backup`: Create a backup of the server.
-- `!start`: Start the server.
-- `!details`: Show server details.
-- `!stop`: Stop the server.
-- `!restart`: Restart the server.
-- `!update`: Update the server.
-- `!monitor`: Monitor the server status.
-- `!test-alert`: Test the alert system.
-- `!update-lgsm`: Update LGSM.
+To execute a command, simply type the command name or its corresponding shortcut after the "!" symbol. For example, to start the server, you can use either `!start` or `!st`.
 
-## Python code for the bot
-
-### __main__.py
-```ruby
-import discord
-import subprocess
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-
-intents = discord.Intents.default()
-intents.members = True
-intents.messages = True
-client = discord.Client(intents=intents)
-
-# Discord Bot Token
-TOKEN = os.getenv('TOKEN')
-
-# Server path and name
-SERVER_PATH = os.getenv('SERVER_PATH')
-SERVER_NAME = os.getenv('SERVER_NAME')
-
-# Server command aliases
-COMMANDS = {
-    'check-update': 'check-update',
-    'force-update': 'force-update',
-    'validate': 'validate',
-    'backup': 'backup',
-    'start': 'start',
-    'details': 'details',
-    'stop': 'stop',
-    'restart': 'restart',
-    'update': 'update',
-    'monitor': 'monitor',
-    'test-alert': 'test-alert',
-    'update-lgsm': 'update-lgsm',
-}
-
-def is_user_allowed(author_id):
-    allowed_user_ids = os.getenv('ALLOWED_USER_IDS').split(',')
-    return str(author_id) in allowed_user_ids
-
-@client.event
-async def on_ready():
-    print(f'{client.user} has connected to Discord!')
-
-
-@client.event
-async def on_message(message):
-    if not is_user_allowed(message.author.id):
-        return
-
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('!'):
-        command = message.content[1:]
-        if command in COMMANDS:
-            full_command = f"./{SERVER_NAME} {COMMANDS[command]}"
-            result = subprocess.run(full_command.split(), cwd=SERVER_PATH, stdout=subprocess.PIPE)
-            output = result.stdout.decode()
-            chunks = [output[i:i+1900] for i in range(0, len(output), 1900)]
-            for chunk in chunks:
-                await message.channel.send(f"```{chunk}```")
-
-
-def main():
-    client.run(TOKEN)
-
-if __name__ == '__main__':
-    main()
-
-```
-### setup_script.py
-```ruby
-import os
-import dotenv
-
-def setup():
-    dotenv_path = os.path.expanduser('~/.env')
-    with open(dotenv_path, 'w') as f:
-        f.write(f"TOKEN={input('Enter your Discord bot token: ')}\n")
-        f.write(f"SERVER_PATH={input('Enter your server path: ')}\n")
-        f.write(f"SERVER_NAME={input('Enter your server name: ')}\n")
-        f.write(f"ALLOWED_USER_IDS={input('Enter your allowed user IDs: ')}\n")
-
-if __name__ == '__main__':
-    setup()
-
-```
 ## Contributing
 
 If you find a bug or have a suggestion, please open an issue on GitHub. Pull requests are welcome!
