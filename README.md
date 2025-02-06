@@ -1,3 +1,4 @@
+# UNMAINTAINED SINCE 2023 
 # DGSbot | LinuxGSM-discord-bot 
 
 DGSbot is a Discord bot that helps you manage your game servers. It allows you to run server commands directly from Discord, without the need to access the server console. 
